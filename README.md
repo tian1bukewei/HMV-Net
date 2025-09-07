@@ -1,6 +1,6 @@
 #Method
 Our method enhances monocular depth estimation through two key innovations:
-1.NoEffectSimAM: We integrate a parameter-free attention mechanism that adaptively refines feature representations by calculating channel and spatial attention based on statistical measures of feature activation. This module enhances the network's focus on salient regions without introducing additional trainable parameters or computational complexity.
+1.Energy-based Residual Attention Module(ERAM): We integrate a parameter-free attention mechanism that adaptively refines feature representations by calculating channel and spatial attention based on statistical measures of feature activation. This module enhances the network's focus on salient regions without introducing additional trainable parameters or computational complexity.
 2.Semantic Enhancement Unit（SEU): We employ a depth-aware foreground enhancement technique that dynamically adjusts contrast for objects closer to the camera. This process involves:
   Creating a foreground probability map from normalized depth values
   Applying an adaptive enhancement factor proportional to foreground probability
