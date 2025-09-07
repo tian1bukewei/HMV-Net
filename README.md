@@ -1,10 +1,10 @@
 #Method
 Our method enhances monocular depth estimation through two key innovations:
-1.Energy-based Residual Attention Module(ERAM): We integrate a parameter-free attention mechanism that adaptively refines feature representations by calculating channel and spatial attention based on statistical measures of feature activation. This module enhances the network's focus on salient regions without introducing additional trainable parameters or computational complexity.
-2.Semantic Enhancement Unit（SEU): We employ a depth-aware foreground enhancement technique that dynamically adjusts contrast for objects closer to the camera. This process involves:
-  Creating a foreground probability map from normalized depth values
-  Applying an adaptive enhancement factor proportional to foreground probability
-  Preserving relative depth relationships while improving foreground-background separation
+1.Energy-based Residual Attention Module(ERAM): Implements spatially-adaptive feature modulation during training through energy minimization principles while reducing to identity mapping during inference.
+  During training: Applies energy-based spatial attention to identify and enhance foreground-critical regions through residual connections. 
+  At inference: Reduces to identity transformation, ensuring zero computational overhead.
+2.Semantic Enhancement Unit（SEU): A complementary component that leverages ERAM's attention results to perform adaptive enhancement on focused regions.
+This module implements lightweight post-processing on attention-identified critical regions through depth-guided residual correction.
 The combination of these techniques results in more detailed and perceptually accurate depth maps, particularly for foreground objects and complex scenes.
 
 Code Structure
@@ -46,5 +46,5 @@ Running the Model
       depth_map = model.infer_image(image)
 
 visualization Tool
-We provide a visualization tool to compare our RASE model with the original Depth Anything V2:
+We provide a visualization tool to compare our HMV-Net model with the original Depth Anything V2:
 python visualize_depth.py --img-path path/to/image.jpg --output-dir results --checkpoint-path path/to/checkpoints --enhanced-viz
