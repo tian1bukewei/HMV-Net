@@ -9,8 +9,8 @@ The combination of these techniques results in more detailed and perceptually ac
 
 Code Structure
 .
-├── NoEffectSimAm.py      # Implementation of Self-calibrated Attention Module
-├── enhanced_dpt.py       # Enhanced Depth Perception Transformer with foreground boosting
+├── ERAM.py      # Implementation of Self-calibrated Attention Module
+├── SEU.py       # Enhanced Depth Perception Transformer with foreground boosting
 ├── visualize_depth.py    # Visualization and comparison utilities
 └── requirements.txt      # Dependencies
 
